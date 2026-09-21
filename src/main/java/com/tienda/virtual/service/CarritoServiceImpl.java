@@ -70,7 +70,7 @@ public class CarritoServiceImpl implements CarritoService {
             for (Producto p : carrito) {
                 table.addCell(p.getNombre());
                 table.addCell("$" + formato.format(p.getPrecio()));   // precio formateado a miles
-                table.addCell(p.getDescripcion());
+                table.addCell(crearDescripcionFactura(p.getDescripcion()));
                 total = total.add(p.getPrecio()); // hace la operacion de suma(.add) inicializada en cero.ZERO
             }
 
@@ -91,5 +91,46 @@ public class CarritoServiceImpl implements CarritoService {
             e.printStackTrace(); // imprime el error en consola
             return null; // retorna null en caso de error
         }
+    }
+
+    // Convierte la descripción almacenada con HTML en una descripción adecuada para el PDF.
+    // El precio anterior se muestra debajo, en menor tamaño, gris y tachado.
+    private Paragraph crearDescripcionFactura(String descripcion) {
+        Paragraph resultado = new Paragraph();
+
+        if (descripcion == null || descripcion.isEmpty()) {
+            return resultado;
+        }
+
+        String texto = descripcion;
+        String precioAnterior = null;
+
+        int inicioPrecio = texto.indexOf("<s");
+        if (inicioPrecio >= 0) {
+            int inicioContenido = texto.indexOf(">", inicioPrecio);
+            int finPrecio = texto.indexOf("</s>", inicioContenido);
+
+            if (inicioContenido >= 0 && finPrecio >= 0) {
+                precioAnterior = texto.substring(inicioContenido + 1, finPrecio);
+                texto = texto.substring(0, inicioPrecio).trim();
+            }
+        }
+
+        // Elimina cualquier etiqueta HTML que pueda quedar en la descripción.
+        texto = texto.replaceAll("<[^>]*>", "").trim();
+        resultado.add(new Chunk(texto));
+
+        if (precioAnterior != null && !precioAnterior.isEmpty()) {
+            resultado.add(Chunk.NEWLINE);
+            Font fuentePrecioAnterior = FontFactory.getFont(
+                    FontFactory.HELVETICA,
+                    8,
+                    Font.STRIKETHRU,
+                    BaseColor.GRAY
+            );
+            resultado.add(new Chunk(precioAnterior, fuentePrecioAnterior));
+        }
+
+        return resultado;
     }
 }
