@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title title="Tienda Virtual">OriginalFragance</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" title="Tienda Virtual">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .legal-button {
+            background-color: #e5e5e5;
+            border: 1px solid #cfcfcf;
+            color: #333;
+        }
+        .legal-button:hover {
+            background-color: #d5d5d5;
+            border-color: #bdbdbd;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="img/favicon.png" alt="Logo" width="50">OriginalFragance</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="ms-auto d-flex align-items-center">
+                <a id="btnRegistrarse" href="registrarse.html" class="btn btn-success me-2" style="display: none;">Registrarse</a>
+                <a id="btnIniciarSesion" href="iniciarsesion.html" class="btn btn-success me-2" style="display: none;">Iniciar Sesión</a>
+                <a id="btnCarrito" href="carrito.html" class="btn btn-success me-2" style="display: none;" aria-label="Carrito"><i class="fa-solid fa-cart-shopping"></i><span id="contadorCarrito" class="badge bg-danger ms-1" style="display: none;">0</span></a>
+                <a id="btnMiCuenta" href="#" class="btn btn-success me-2" style="display: none;">Mi Cuenta</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<header class="hero">
+    <div class="container text-center">
+        <h1>Descubre lo mejor en fragancias de la linea PACO RABANNE</h1>
+        <p>Ofertas exclusivas para este 2025</p>
+        <p>En París, por la noche, la fiesta nunca se detiene. FAME Couture con notas de incienso cremoso, iris soleado
+            y bálsamo de vainilla, nunca pasa desapercibida allá donde va. Más de moda que nunca. Siempre a su lado,
+            PURE XS Elixir: el noctámbulo del rock 'n' roll.</p>
+    </div>
+</header>
+<main>
+    <div class="container my-5 text-light">
+        <h1 class="text-center mb-4">Términos y condiciones</h1>
+        <p>Al utilizar y realizar compras en OriginalFragance, el usuario acepta estos términos y condiciones.</p>
+        <h2>Compras</h2>
+        <p>El usuario debe proporcionar información correcta y actualizada para gestionar su pedido y entrega.</p>
+        <h2>Precios y pedidos</h2>
+        <p>Los precios publicados corresponden a los productos disponibles en la tienda. La confirmación del pedido se realizará mediante los mecanismos habilitados por la tienda.</p>
+        <h2>Entrega</h2>
+        <p>Los pedidos serán enviados a la dirección registrada por el usuario, de acuerdo con las condiciones de entrega informadas en la tienda.</p>
+        <h2>Atención al consumidor</h2>
+        <p>Para dudas, inquietudes, solicitudes o reclamaciones, el usuario puede comunicarse por WhatsApp al 3112463665 o al correo tibatacamilo2.0@gmail.com.</p>
+        <p class="mt-4"><a href="index.html" class="btn legal-button">Volver a la tienda</a></p>
+    </div>
+</main>
+<footer>
+    <div class="contacto">
+        <h3>Contacto</h3>
+        <p>WhatsApp: 3112463665 Cualquier Duda Inquietud escribenos</p>
+        <p>Email: tibatacamilo2.0@gmail.com</p>
+    </div>
+    <div class="redes-sociales">
+        <h3>Síguenos</h3>
+        <a href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/?mx=2" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="mapa-del-sitio">
+        <h3>Otros Proovedores</h3>
+        <ul>
+            <li><a href="https://www.rabanne.com/ww/es/" target="_blank">Rabanne</a></li>
+            <li><a href="https://eu.clivechristian.com/" target="_blank">Clive Christian</a></li>
+            <li><a href="https://intl.houseofsillage.com/" target="_blank">House of Sillage</a></li>
+        </ul>
+    </div>
+    <div class="mapa-del-sitio">
+        <h3>Información legal</h3>
+        <ul>
+            <li><a href="terminos-condiciones.html">Términos y condiciones</a></li>
+            <li><a href="politica-datos.html">Política de tratamiento de datos personales</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="usuarios.js"></script>
+</body>
+</html>

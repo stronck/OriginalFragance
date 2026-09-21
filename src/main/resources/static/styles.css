@@ -1,0 +1,227 @@
+/* Estilos generales de la tienda virtual y de sus componentes visuales. */
+/* Reset básico */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #131313; /* Negro puro */
+    color: #d0d0d0; /* Gris claro para mejor lectura */
+}
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Hero */
+.hero {
+    background: linear-gradient(to right, #2a2a2a, #2a2a2a); /* Gris oscuro elegante */
+    color: #f0f0f0; /* Blanco humo */
+    padding: 80px 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Productos cards */
+.card {
+    height: auto; /* 🔹 Fijamos la altura de las cards para que no sean demasiado largas */
+    display: flex;
+    flex-direction: column;
+    background-color: #161616;
+    border: 1px solid #222;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 140px; /* 🔹 Reducimos la altura de las imágenes para evitar alargar las cards */
+    object-fit: cover; /* Mantiene la proporción sin deformar */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    min-height: 40px; /* 🔹 Establecemos una altura mínima para evitar desajustes */
+}
+
+.card-text {
+    color: white;
+    font-size: 0.85rem;
+    min-height: 60px; /* 🔹 Limitamos la altura del texto para mantener el tamaño uniforme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fw-bold {
+    color: white;
+    font-size: 0.9rem;
+    margin-top: auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: #1e1e1e;
+    flex-grow: 1;
+    padding: 0.7rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 🔹 Distribuye mejor el contenido */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    margin-top: 10px; /* 🔹 Empuja el botón hacia abajo para alinear */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Botones navBar, iraInicio, notienesunaCuenta  */
+.btn-success {
+    background-color: #333; /* Gris oscuro */
+    border: none;
+    color: #f5f5f5; /* Blanco humo */
+}
+
+.btn-success:hover {
+    background-color: #444; /* Gris un poco más claro */
+}
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Footer */
+footer {
+    background-color: #0a0a0a; /* Negro absoluto */
+    color: #cfcfcf; /* Gris claro */
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer div {
+    margin: 10px;
+}
+
+footer h3 {
+    color: #888; /* Gris medio */
+}
+
+footer a {
+    color: #999; /* Gris claro */
+    text-decoration: none;
+}
+
+.redes-sociales a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #777; /* Gris neutro */
+}
+
+.redes-sociales a:hover {
+    color: #bbb; /* Gris más claro */
+}
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Animaciones y mejoras visuales en el carrito.html*/
+    .animate-btn {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .animate-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+    }
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Alertas de producción */
+.alerta-produccion-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(3px);
+}
+
+.alerta-produccion {
+    width: min(460px, 100%);
+    background: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 12px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: alertaEntrada 0.18s ease-out;
+}
+
+.alerta-produccion-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px 12px;
+    border-bottom: 1px solid #333;
+}
+
+.alerta-produccion-icono {
+    color: #d0d0d0;
+    font-size: 1.25rem;
+}
+
+.alerta-produccion-titulo {
+    margin: 0;
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.alerta-produccion-mensaje {
+    margin: 0;
+    padding: 18px 20px;
+    color: #d0d0d0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.alerta-produccion-boton {
+    display: block;
+    min-width: 100px;
+    margin: 0 20px 18px auto;
+    padding: 7px 18px;
+    background: #e5e5e5;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    color: #222;
+    font-weight: 600;
+}
+
+.alerta-produccion-boton:hover,
+.alerta-produccion-boton:focus {
+    background: #d5d5d5;
+    border-color: #bdbdbd;
+    color: #111;
+}
+
+@keyframes alertaEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
