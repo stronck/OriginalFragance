@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS producto (
 -- Insertar datos en la tabla 'producto'
 INSERT INTO producto (nombre, descripcion, precio) VALUES
 ('PACO RABANNE c- 1 FAME 80ml', 'Un perfume femenino con notas de menta, sangre de dragón y ámbar, ideal para ocasiones nocturnas. Duración de 12 a 24 horas. Envase dorado con detalle de medallón. $649.999', 599900.00),
-('PACO RABANNE c- 1 PURE XS BLACK 100ml', 'Un perfume masculino que combina notas de café y vainilla intensa, ofreciendo un aroma sensual con un toque de misterio y seducción. $639.999', 619000.00),
+('PACO RABANNE c- 1 PURE XS BLACK 100ml', 'Un perfume masculino que combina notas de café y vainilla intensa, ofreciendo un aroma sensual con un toque de misterio y seducción. $639.999', 619900.00),
 ('PACO RABANNE c- 1 LADY MILLION 80ml', 'Un perfume femenino, fresco, floral y seductor que combina neroli, jazmín, patchouli y especias, brindando un toque de glamour y sofisticación. $529.999', 499900.00),
 ('PACO RABANNE c- 1 PURE XS 100ml', 'Un perfume masculino acuático y fresco que mezcla notas de pomelo, mandarina y flor de naranjo, aportando dinamismo y aventura. $649.999', 599900.00);
 
