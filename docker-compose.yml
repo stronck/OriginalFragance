@@ -1,18 +1,18 @@
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: mysql_ecommerce
+  postgres:
+    image: postgres:16
+    container_name: postgres_ecommerce
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: ecommerce
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ecommerce
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
       - ./sql:/docker-entrypoint-initdb.d
-    command: --default-authentication-plugin=mysql_native_password
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ecommerce"]
       interval: 10s
       retries: 5
 
@@ -20,14 +20,15 @@ services:
     build: .
     container_name: springboot_ecommerce
     depends_on:
-      mysql:
+      postgres:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ecommerce?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ecommerce
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SESSION_COOKIE_SECURE: "false"
     ports:
       - "8080:8080"
 
 volumes:
-  mysql_data:
+  postgres_data:
