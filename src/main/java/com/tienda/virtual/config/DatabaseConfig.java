@@ -27,23 +27,24 @@ public class DatabaseConfig {
             );
         }
 
-        String jdbcUrl = toJdbcPostgresUrl(configuredUrl);
+        ConnectionInfo connection = parseConnection(configuredUrl);
 
         HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setJdbcUrl(jdbcUrl);
+        dataSource.setJdbcUrl(connection.jdbcUrl());
         dataSource.setDriverClassName("org.postgresql.Driver");
 
         String username = firstNonBlank(
                 environment.getProperty("SPRING_DATASOURCE_USERNAME"),
-                environment.getProperty("spring.datasource.username")
+                environment.getProperty("spring.datasource.username"),
+                connection.username()
         );
 
         String password = firstNonBlank(
                 environment.getProperty("SPRING_DATASOURCE_PASSWORD"),
-                environment.getProperty("spring.datasource.password")
+                environment.getProperty("spring.datasource.password"),
+                connection.password()
         );
 
-        // Rollout normalmente entrega usuario y contraseña dentro de DATABASE_URL.
         if (username != null) {
             dataSource.setUsername(username);
         }
@@ -54,9 +55,9 @@ public class DatabaseConfig {
         return dataSource;
     }
 
-    private String toJdbcPostgresUrl(String url) {
+    private ConnectionInfo parseConnection(String url) {
         if (url.startsWith("jdbc:postgresql://")) {
-            return url;
+            return new ConnectionInfo(url, null, null);
         }
 
         if (!url.startsWith("postgres://") && !url.startsWith("postgresql://")) {
@@ -82,16 +83,20 @@ public class DatabaseConfig {
             jdbc.append("?").append(uri.getRawQuery());
         }
 
-        // Si la URL trae credenciales, se configuran directamente en Hikari.
+        String username = null;
+        String password = null;
+
         if (uri.getUserInfo() != null && uri.getUserInfo().contains(":")) {
             String[] credentials = uri.getUserInfo().split(":", 2);
-            if (credentials.length == 2) {
-                // Se dejan disponibles mediante propiedades del DataSource en el bean.
-                // La URL JDBC queda libre de credenciales para evitar exponerlas en logs.
-            }
+            username = decode(credentials[0]);
+            password = decode(credentials[1]);
         }
 
-        return jdbc.toString();
+        return new ConnectionInfo(jdbc.toString(), username, password);
+    }
+
+    private String decode(String value) {
+        return URLDecoder.decode(value, StandardCharsets.UTF_8);
     }
 
     private String firstNonBlank(String... values) {
@@ -101,5 +106,8 @@ public class DatabaseConfig {
             }
         }
         return null;
+    }
+
+    private record ConnectionInfo(String jdbcUrl, String username, String password) {
     }
 }
