@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.tienda</groupId>
 	<artifactId>virtual</artifactId>
@@ -14,18 +14,9 @@
 	<name>virtual</name>
 	<description>tienda con spring boot</description>
 	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+	<licenses><license/></licenses>
+	<developers><developer/></developers>
+	<scm><connection/><developerConnection/><tag/><url/></scm>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -38,7 +29,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -56,9 +46,10 @@
 			<artifactId>spring-security-crypto</artifactId>
 			<version>6.4.2</version>
 		</dependency>
+		<!-- Driver PostgreSQL para Rollout y el entorno local -->
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -73,7 +64,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -103,5 +93,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
