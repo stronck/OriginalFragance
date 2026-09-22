@@ -1,0 +1,69 @@
+-- Datos iniciales de la tienda.
+-- Las inserciones son idempotentes para que los reinicios de Rollout
+-- no creen productos ni usuarios duplicados.
+
+INSERT INTO producto (nombre, descripcion, precio)
+SELECT 'PACO RABANNE c- 1 FAME 80ml',
+       'Un perfume femenino con notas de menta, sangre de dragón y ámbar, ideal para ocasiones nocturnas. Duración de 12 a 24 horas. Envase dorado con detalle de medallón. <div><s style="font-size: 0.8em; color: #777;">$649.999</s></div>',
+       599900.00
+WHERE NOT EXISTS (
+    SELECT 1 FROM producto WHERE nombre = 'PACO RABANNE c- 1 FAME 80ml'
+);
+
+INSERT INTO producto (nombre, descripcion, precio)
+SELECT 'PACO RABANNE c- 1 PURE XS BLACK 100ml',
+       'Un perfume masculino que combina notas de café y vainilla intensa, ofreciendo un aroma sensual con un toque de misterio y seducción. <div><s style="font-size: 0.8em; color: #777;">$639.999</s></div>',
+       619900.00
+WHERE NOT EXISTS (
+    SELECT 1 FROM producto WHERE nombre = 'PACO RABANNE c- 1 PURE XS BLACK 100ml'
+);
+
+INSERT INTO producto (nombre, descripcion, precio)
+SELECT 'PACO RABANNE c- 1 LADY MILLION 80ml',
+       'Un perfume femenino, fresco, floral y seductor que combina neroli, jazmín, patchouli y especias, brindando un toque de glamour y sofisticación. <div><s style="font-size: 0.8em; color: #777;">$529.999</s></div>',
+       499900.00
+WHERE NOT EXISTS (
+    SELECT 1 FROM producto WHERE nombre = 'PACO RABANNE c- 1 LADY MILLION 80ml'
+);
+
+INSERT INTO producto (nombre, descripcion, precio)
+SELECT 'PACO RABANNE c- 1 PURE XS 100ml',
+       'Un perfume masculino acuático y fresco que mezcla notas de pomelo, mandarina y flor de naranjo, aportando dinamismo y aventura. <div><s style="font-size: 0.8em; color: #777;">$649.999</s></div>',
+       599900.00
+WHERE NOT EXISTS (
+    SELECT 1 FROM producto WHERE nombre = 'PACO RABANNE c- 1 PURE XS 100ml'
+);
+
+INSERT INTO usuario
+(nombre_usuario, contrasena, nombres, apellidos, celular, correo, direccion_envio, rol)
+SELECT 'mario', '$2a$10$0zcer5mhCrScqVRiRqzuj.hF4fiwOt1MQUhRV9Wu5B2g9/1UvdEvS',
+       'Marco', 'Antonio', '3222538354', 'mario@gmail.com', 'Moniquira', 'user'
+WHERE NOT EXISTS (
+    SELECT 1 FROM usuario WHERE nombre_usuario = 'mario'
+);
+
+INSERT INTO usuario
+(nombre_usuario, contrasena, nombres, apellidos, celular, correo, direccion_envio, rol)
+SELECT 'administrador', '$2a$10$Hpo5C.rx/zDwOphq0vPA0OpRwQAtR8beTSk.jni0EMWK/SdeA1mXK',
+       'German', 'Velandia', '3161312630', 'corporativo1@gmail.com',
+       'Tunja centro OriginF distrito15', 'admin'
+WHERE NOT EXISTS (
+    SELECT 1 FROM usuario WHERE nombre_usuario = 'administrador'
+);
+
+INSERT INTO usuario
+(nombre_usuario, contrasena, nombres, apellidos, celular, correo, direccion_envio, rol)
+SELECT 'luz', '$2a$10$4hijBzQuhDSA10Vqy.9ww.MwzZJXnmIkZnu8IcQSYuYkHUmN79LaO',
+       'Luz Andrea', 'Medina Gonzalez', '3112764479', 'andrea@gmail.com', 'Paipa', 'user'
+WHERE NOT EXISTS (
+    SELECT 1 FROM usuario WHERE nombre_usuario = 'luz'
+);
+
+INSERT INTO usuario
+(nombre_usuario, contrasena, nombres, apellidos, celular, correo, direccion_envio, rol)
+SELECT 'administrador2', '$2a$10$sJXx.Id07lemOO//CG/t7uwUP0hilsiCgslVyQfMUi3P2iv1BweMS',
+       'Juana', 'Del Mar Chaparro', '3222538354', 'corporativo2@gmail.com',
+       'Tunja centro OriginF distrito15', 'admin'
+WHERE NOT EXISTS (
+    SELECT 1 FROM usuario WHERE nombre_usuario = 'administrador2'
+);
