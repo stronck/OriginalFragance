@@ -7,13 +7,13 @@ WORKDIR /app
 # Copia el archivo de configuración de Maven
 COPY pom.xml .
 
-# Descarga las dependencias necesarias (esto se cacheará si no hay cambios en pom.xml)
+# Descarga las dependencias necesarias
 RUN mvn dependency:go-offline
 
-# Copia el resto del código fuente
+# Copia el código fuente
 COPY src ./src
 
-# Compila el proyecto y empaqueta en un archivo JAR
+# Compila el proyecto y empaqueta el archivo JAR
 RUN mvn clean package -DskipTests
 
 # Etapa de ejecución
@@ -25,8 +25,8 @@ WORKDIR /app
 # Copia el archivo JAR desde la etapa de construcción
 COPY --from=build /app/target/*.jar app.jar
 
-# Expone el puerto en el que la aplicación se ejecutará
-EXPOSE 8012
+# Rollout utilizará el puerto 8080 del contenedor
+EXPOSE 8080
 
-# Comando para ejecutar la aplicación
+# Ejecuta la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
