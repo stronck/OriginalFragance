@@ -11,6 +11,31 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         html.auth-pending body { visibility: hidden; }
+
+        /* Ajustes responsivos exclusivos de esta página. */
+        .medios-pago {
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 576px) {
+            .medios-pago {
+                gap: 1rem !important;
+            }
+
+            .medio-pago {
+                flex: 1 1 130px;
+                min-width: 130px;
+            }
+
+            .transportadoras {
+                flex-wrap: wrap;
+                gap: 1rem !important;
+            }
+
+            .transportadora {
+                flex: 0 1 100px;
+            }
+        }
     </style>
     <script>
         document.documentElement.classList.add('auth-pending');
@@ -84,34 +109,29 @@
             <div class="row g-2 align-items-center">
                 <div class="col-lg-8">
                     <h4 class="text-center fw-bold mb-2 text-light">💳 Medios de pago</h4>
-                    <div class="d-flex justify-content-center align-items-start gap-4">
-                        <div class="text-center text-light">
-                            <img src="img/nequi.jpeg" alt="Nequi" style="width: 50px; height: 50px; object-fit: contain;">
+                    <div class="medios-pago d-flex justify-content-center align-items-start gap-4">
+                        <div class="medio-pago text-center text-light">
+                            <img src="img/nequi.jpeg alt="Nequi" style="width: 50px; height: 50px; object-fit: contain;">
                             <div class="small fw-bold mt-1">Nequi</div>
                             <p class="small mb-0 mt-1">Transferencia a número de celular<br><strong>3112463665</strong><br>Camilo Andrés Tibatá Salguero</p>
                         </div>
-                        <div class="text-center text-light">
-                            <img src="img/daviplata.jpeg" alt="Daviplata" style="width: 50px; height: 50px; object-fit: contain;">
+                        <div class="medio-pago text-center text-light">
+                            <img src="img/daviplata.jpeg alt="Daviplata" style="width: 50px; height: 50px; object-fit: contain;">
                             <div class="small fw-bold mt-1">Daviplata</div>
                             <p class="small mb-0 mt-1">Transferencia a número de celular<br><strong>3112463665</strong><br>Camilo Andrés Tibatá Salguero</p>
-                        </div>
-                        <div class="text-center text-light">
-                            <img src="img/efecty.jpeg" alt="Efecty" style="width: 50px; height: 50px; object-fit: contain;">
-                            <div class="small fw-bold mt-1">Efecty</div>
-                            <p class="small mb-0 mt-1">Giro a Camilo Andrés Tibatá Salguero<br>cédula 1049641875<br>celular 3112463665<br>ciudad Tunja<br>Luego confirma el Giro escribiendo a él <a href="tel:3112463665" class="text-warning">whatsapp 3112463665</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <h4 class="text-center fw-bold mb-2 text-light">🚚 Transportadoras</h4>
-                    <div class="d-flex justify-content-center align-items-center gap-4">
-                        <div class="text-center text-light">
-                            <img src="img/servientrega.jpeg" alt="Servientrega" style="width: 70px; height: 55px; object-fit: contain;">
+                    <div class="transportadoras d-flex justify-content-center align-items-center gap-4">
+                        <div class="transportadora text-center text-light">
+                            <img src="img/servientrega.jpeg alt="Servientrega" style="width: 70px; height: 55px; object-fit: contain;">
                             <div class="small fw-bold mt-1">Servientrega</div>
                         </div>
-                        <div class="text-center text-light">
-                            <img src="img/envia.jpeg" alt="Envía" style="width: 70px; height: 55px; object-fit: contain;">
+                        <div class="transportadora text-center text-light">
+                            <img src="img/envia.jpeg alt="Envía" style="width: 70px; height: 55px; object-fit: contain;">
                             <div class="small fw-bold mt-1">Envía</div>
                         </div>
                     </div>
