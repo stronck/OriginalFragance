@@ -36,7 +36,6 @@ public class PedidoController {
     @PostMapping
     // Método: documenta la responsabilidad del método siguiente.
     public ResponseEntity<Pedido> crearPedido(HttpSession session) {
-    public ResponseEntity<Pedido> crearPedido(HttpSession session) {
         Usuario usuario = usuarioDeSesion(session);
 
         if (usuario == null) {
@@ -61,7 +60,6 @@ public class PedidoController {
     @GetMapping("/mis-pedidos")
     // Método: documenta la responsabilidad del método siguiente.
     public ResponseEntity<List<Pedido>> obtenerMisPedidos(HttpSession session) {
-    public ResponseEntity<List<Pedido>> obtenerMisPedidos(HttpSession session) {
         Usuario usuario = usuarioDeSesion(session);
 
         if (usuario == null) {
@@ -73,7 +71,6 @@ public class PedidoController {
 
     @GetMapping("/{id}/factura")
     // Método: documenta la responsabilidad del método siguiente.
-    public ResponseEntity<byte[]> generarFactura(@PathVariable Long id, HttpSession session) {
     public ResponseEntity<byte[]> generarFactura(@PathVariable Long id, HttpSession session) {
         Usuario usuarioSesion = usuarioDeSesion(session);
 
@@ -112,7 +109,6 @@ public class PedidoController {
     @GetMapping
     // Método: documenta la responsabilidad del método siguiente.
     public ResponseEntity<List<Pedido>> obtenerPedidos(HttpSession session) {
-    public ResponseEntity<List<Pedido>> obtenerPedidos(HttpSession session) {
         if (!esAdministrador(session)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
@@ -139,13 +135,11 @@ public class PedidoController {
 
     // Método: documenta la responsabilidad del método siguiente.
     private boolean esAdministrador(HttpSession session) {
-    private boolean esAdministrador(HttpSession session) {
         Usuario usuario = usuarioDeSesion(session);
         return usuario != null && "admin".equalsIgnoreCase(usuario.getRol());
     }
 
     // Método: documenta la responsabilidad del método siguiente.
-    private Usuario usuarioDeSesion(HttpSession session) {
     private Usuario usuarioDeSesion(HttpSession session) {
         Object usuario = session.getAttribute(USUARIO);
         if (usuario instanceof Usuario) {
@@ -156,7 +150,6 @@ public class PedidoController {
     }
 
     // Método: documenta la responsabilidad del método siguiente.
-    private List<Producto> carritoEnSesion(HttpSession session) {
     private List<Producto> carritoEnSesion(HttpSession session) {
         Object valor = session.getAttribute(CARRITO);
 
