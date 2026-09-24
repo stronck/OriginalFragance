@@ -1,3 +1,8 @@
+-- DOCUMENTACIÓN DEL ARCHIVO: ecommerce.sql
+-- Este script define/prepara la estructura y los datos iniciales de la tienda.
+-- Los comentarios explican tablas, restricciones, productos, usuarios e inserciones.
+-- No se modifica ninguna instrucción SQL existente.
+
 -- Script PostgreSQL para preparar la base de datos de la tienda.
 -- Se utiliza principalmente con Docker Compose local.
 -- En Rollout, la base administrada se crea con "rollout db add"
