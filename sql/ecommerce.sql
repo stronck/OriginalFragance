@@ -51,5 +51,5 @@ INSERT INTO usuario
 SELECT 'stck', '$2a$10$Hpo5C.rx/zDwOphq0vPA0OpRwQAtR8beTSk.jni0EMWK/SdeA1mXK',
        'Camilo', 'Tibata Salguero', '3112463665', 'tibatacamilo2.0@gmail.com',
        'Tunja centro OriginF distrito15', 'admin'
-WHERE NOT EXISTS (SELECT 1 FROM usuario WHERE nombre_usuario = 'administrador');
+WHERE NOT EXISTS (SELECT 1 FROM usuario WHERE nombre_usuario = 'stck');
 
