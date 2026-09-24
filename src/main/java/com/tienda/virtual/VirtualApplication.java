@@ -1,3 +1,12 @@
+/*
+ * DOCUMENTACIÓN DEL ARCHIVO: VirtualApplication.java
+ *
+ * Este bloque explica el propósito general del archivo sin modificar su lógica.
+ * Las clases, métodos, atributos, anotaciones y llamadas que siguen pertenecen
+ * a la implementación funcional de la aplicación y se conservan exactamente.
+ * La información detallada se centra en qué responsabilidad cumple cada parte,
+ * cómo participa en el flujo de la tienda y qué relación tiene con las demás capas.
+ */
 // Clase principal que inicia la aplicación Spring Boot.
 package com.tienda.virtual;
 
