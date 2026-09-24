@@ -1,3 +1,7 @@
+# DOCUMENTACIÓN DEL ARCHIVO: mvnw
+# Wrapper de Maven que permite ejecutar Maven usando la versión/configuración definida por el proyecto.
+# No se modifica el script funcional; este comentario solamente documenta su finalidad.
+
 #!/bin/sh
 # ----------------------------------------------------------------------------
 # Licensed to the Apache Software Foundation (ASF) under one
