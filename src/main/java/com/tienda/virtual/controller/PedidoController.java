@@ -1,3 +1,9 @@
+/*
+ * DOCUMENTACIÓN DETALLADA DEL ARCHIVO
+ * Este comentario explica la responsabilidad del componente, sus datos y su relación
+ * con las demás capas de la aplicación. El código que aparece después se conserva
+ * sin cambios: únicamente se agregan comentarios para facilitar su estudio y mantenimiento.
+ */
 // Controlador REST encargado de crear, consultar, actualizar y generar facturas de pedidos.
 package com.tienda.virtual.controller;
 
