@@ -46,7 +46,7 @@
 			<artifactId>spring-security-crypto</artifactId>
 			<version>6.4.2</version>
 		</dependency>
-		<!-- Driver PostgreSQL para Rollout y el entorno local -->
+		<!-- Driver PostgreSQL -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
