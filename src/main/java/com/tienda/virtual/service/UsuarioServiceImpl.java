@@ -21,17 +21,20 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     // registro
     @Override
-    public Usuario registrarUsuario(Usuario usuario) {
+    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
+    public Usuario registrarUsuario(Usuario usuario) {public Usuario registrarUsuario(Usuario usuario) {
         usuario.setContrasena(passwordEncoder.encode(usuario.getContrasena()));
         return usuarioRepository.save(usuario);
     }
 
     @Override
-    public Usuario iniciarSesion(String identificador, String contrasena) {
+    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
+    public Usuario iniciarSesion(String identificador, String contrasena) {public Usuario iniciarSesion(String identificador, String contrasena) {
         Optional<Usuario> usuario = usuarioRepository.findByNombreUsuarioOrCorreo(identificador, identificador);
         if (usuario.isPresent() && passwordEncoder.matches(contrasena, usuario.get().getContrasena())) {
             return usuario.orElse(null);
@@ -40,17 +43,20 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<Usuario> obtenerTodosUsuarios() {
+    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
+    public List<Usuario> obtenerTodosUsuarios() {public List<Usuario> obtenerTodosUsuarios() {
         return (List<Usuario>) usuarioRepository.findAll();
     }
 
     @Override
-    public void eliminarUsuario(Long id) {
+    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
+    public void eliminarUsuario(Long id) {public void eliminarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
 
     @Override
-    public Usuario actualizarUsuario(Usuario usuario) {
+    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
+    public Usuario actualizarUsuario(Usuario usuario) {public Usuario actualizarUsuario(Usuario usuario) {
         if (usuario.getContrasena() != null && !usuario.getContrasena().isEmpty()) {
             usuario.setContrasena(passwordEncoder.encode(usuario.getContrasena()));
         } else {
@@ -63,7 +69,8 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public Usuario obtenerPorId(Long id) {
+    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
+    public Usuario obtenerPorId(Long id) {public Usuario obtenerPorId(Long id) {
         return usuarioRepository.findById(id).orElse(null);
     }
 }
