@@ -1,3 +1,9 @@
+/*
+ * DOCUMENTACIÓN DETALLADA: usuarios.js
+ * Centraliza la lógica del navegador relacionada con sesión, registro, navegación,
+ * perfil, usuarios y controles de acceso del panel administrativo. No se modifica
+ * ninguna instrucción JavaScript; solamente se documenta el archivo.
+ */
 // Funciones del frontend relacionadas con sesión, usuarios, pedidos y administración.
 /*
  * Autor: Camilo Tibatá Salguero
