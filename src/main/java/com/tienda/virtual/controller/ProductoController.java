@@ -24,6 +24,7 @@ public class ProductoController {
 
 
     @GetMapping
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public List<Producto> listarProductos() {
     public List<Producto> listarProductos() {
         return (List<Producto>) productoRepository.findAll();
     }
