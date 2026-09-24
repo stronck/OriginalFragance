@@ -134,15 +134,40 @@ footer a {
 .redes-sociales a:hover {
     color: #bbb; /* Gris más claro */
 }
+
 /* ---------------------------------------------------------------------------------------------------------- */
-/* Animaciones y mejoras visuales en el carrito.html*/
-    .animate-btn {
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
-    .animate-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
-    }
+/* Animaciones y mejoras visuales en el carrito.html */
+.animate-btn {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.animate-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Ajustes exclusivos de carrito.html: sin CSS interno y sin @media. */
+html.auth-pending body {
+    visibility: hidden;
+}
+
+.medios-pago {
+    flex-wrap: wrap;
+}
+
+.medio-pago {
+    flex: 1 1 130px;
+    min-width: 130px;
+}
+
+.transportadoras {
+    flex-wrap: wrap;
+}
+
+.transportadora {
+    flex: 0 1 100px;
+}
 
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Alertas de producción */
