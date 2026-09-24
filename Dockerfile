@@ -1,3 +1,7 @@
+# DOCUMENTACIÓN DEL ARCHIVO: Dockerfile
+# Define la construcción en dos etapas: Maven compila el proyecto y Eclipse Temurin ejecuta el JAR.
+# Se conservan todas las instrucciones existentes; este bloque solamente documenta su propósito.
+
 # Etapa de construcción
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 
