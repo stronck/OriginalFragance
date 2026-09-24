@@ -1,3 +1,9 @@
+/*
+ * DOCUMENTACIÓN DETALLADA: productocarrito.js
+ * Gestiona la comunicación de la página carrito con el backend, carga y renderiza
+ * productos, calcula totales, agrega/elimina elementos y crea pedidos. El código
+ * existente se conserva sin cambios; este bloque únicamente explica su propósito.
+ */
 // Funciones del catálogo y carrito: consulta productos, administra la sesión y gestiona pedidos.
 /* Carrito administrado por el backend mediante HttpSession. */
 
