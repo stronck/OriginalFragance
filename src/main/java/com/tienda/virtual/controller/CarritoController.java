@@ -1,3 +1,12 @@
+/*
+ * DOCUMENTACIÓN DEL ARCHIVO: CarritoController.java
+ *
+ * Este bloque explica el propósito general del archivo sin modificar su lógica.
+ * Las clases, métodos, atributos, anotaciones y llamadas que siguen pertenecen
+ * a la implementación funcional de la aplicación y se conservan exactamente.
+ * La información detallada se centra en qué responsabilidad cumple cada parte,
+ * cómo participa en el flujo de la tienda y qué relación tiene con las demás capas.
+ */
 // Controlador REST encargado de gestionar el carrito asociado a la sesión del usuario.
 package com.tienda.virtual.controller;
 
