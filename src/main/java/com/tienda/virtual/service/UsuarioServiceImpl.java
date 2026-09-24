@@ -1,3 +1,8 @@
+/*
+ * DOCUMENTACIÓN DETALLADA DEL ARCHIVO
+ * Este comentario explica la responsabilidad del componente y el flujo de datos que implementa.
+ * Todo el código funcional existente se conserva sin cambios; solamente se agregan comentarios.
+ */
 // Implementación de la lógica de registro, inicio de sesión y gestión de usuarios.
 package com.tienda.virtual.service;
 
