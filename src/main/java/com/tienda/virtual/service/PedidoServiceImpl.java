@@ -30,13 +30,11 @@ public class PedidoServiceImpl implements PedidoService {
     @Autowired
     private CarritoService carritoService;
 
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    private final ObjectMapper objectMapper = new ObjectMapper();private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     @Transactional
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    public Pedido crearPedido(Usuario usuario, List<Producto> carrito) {public Pedido crearPedido(Usuario usuario, List<Producto> carrito) {
+    public Pedido crearPedido(Usuario usuario, List<Producto> carrito) {
         if (usuario == null || carrito == null || carrito.isEmpty()) {
             return null;
         }
@@ -63,27 +61,23 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     @Override
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    public List<Pedido> obtenerPedidos() {public List<Pedido> obtenerPedidos() {
+    public List<Pedido> obtenerPedidos() {
         return pedidoRepository.findAllByOrderByFechaDesc();
     }
 
     @Override
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    public List<Pedido> obtenerPedidosPorUsuario(Long usuarioId) {public List<Pedido> obtenerPedidosPorUsuario(Long usuarioId) {
+    public List<Pedido> obtenerPedidosPorUsuario(Long usuarioId) {
         return pedidoRepository.findByUsuarioIdOrderByFechaDesc(usuarioId);
     }
 
     @Override
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    public Pedido obtenerPedido(Long id) {public Pedido obtenerPedido(Long id) {
+    public Pedido obtenerPedido(Long id) {
         return pedidoRepository.findById(id).orElse(null);
     }
 
     @Override
     @Transactional
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    public Pedido marcarPagoExitoso(Long id) {public Pedido marcarPagoExitoso(Long id) {
+    public Pedido marcarPagoExitoso(Long id) {
         Pedido pedido = pedidoRepository.findById(id).orElse(null);
 
         if (pedido == null) {
@@ -95,8 +89,7 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     @Override
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    public byte[] generarFactura(Pedido pedido) {public byte[] generarFactura(Pedido pedido) {
+    public byte[] generarFactura(Pedido pedido) {
         if (pedido == null || pedido.getDetalleCompra() == null) {
             return null;
         }
