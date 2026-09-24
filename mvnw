@@ -1,3 +1,7 @@
+# DOCUMENTACIÓN DETALLADA: mvnw
+# Script Maven Wrapper para ejecutar Maven de forma reproducible en entornos compatibles.
+# El contenido funcional original permanece intacto.
+
 # DOCUMENTACIÓN DEL ARCHIVO: mvnw
 # Wrapper de Maven que permite ejecutar Maven usando la versión/configuración definida por el proyecto.
 # No se modifica el script funcional; este comentario solamente documenta su finalidad.
