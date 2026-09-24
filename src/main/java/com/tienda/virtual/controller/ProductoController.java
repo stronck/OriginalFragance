@@ -1,3 +1,9 @@
+/*
+ * DOCUMENTACIÓN DETALLADA DEL ARCHIVO
+ * Este comentario explica la responsabilidad del componente, sus datos y su relación
+ * con las demás capas de la aplicación. El código que aparece después se conserva
+ * sin cambios: únicamente se agregan comentarios para facilitar su estudio y mantenimiento.
+ */
 // Controlador REST que expone las operaciones disponibles para consultar productos.
 package com.tienda.virtual.controller;
 
