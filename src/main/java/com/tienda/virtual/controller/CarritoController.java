@@ -62,7 +62,6 @@ public class CarritoController {
     @GetMapping
     // Método: documenta la responsabilidad del método siguiente.
     public ResponseEntity<List<Producto>> obtenerCarrito(HttpSession session) {
-    public ResponseEntity<List<Producto>> obtenerCarrito(HttpSession session) {
         if (!usuarioAutenticado(session)) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
@@ -98,7 +97,6 @@ public class CarritoController {
 
     // Método: documenta la responsabilidad del método siguiente.
     private List<Producto> carritoEnSesion(HttpSession session) {
-    private List<Producto> carritoEnSesion(HttpSession session) {
         Object valor = session.getAttribute(CARRITO);
 
         if (valor instanceof List<?>) {
@@ -111,7 +109,6 @@ public class CarritoController {
     }
 
     // Método: documenta la responsabilidad del método siguiente.
-    private boolean usuarioAutenticado(HttpSession session) {
     private boolean usuarioAutenticado(HttpSession session) {
         return session.getAttribute(USUARIO_ID) != null;
     }
