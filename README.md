@@ -257,14 +257,14 @@ si no se define otro valor mediante `PORT`.
 
 ## Despliegue gratuito en Rollout
 
-El proyecto está preparado para desplegarse en **Rollout** usando su plan gratuito. Rollout puede detectar aplicaciones Java, construirlas y publicar una URL HTTPS sin necesidad de crear archivos YAML de despliegue. El plan gratuito no requiere tarjeta y las aplicaciones pueden suspenderse después de 15 minutos sin tráfico. citeturn0search0turn0search1
+El proyecto está preparado para desplegarse en **Rollout** usando su plan gratuito. Rollout puede detectar aplicaciones Java, construirlas y publicar una URL HTTPS sin necesidad de crear archivos YAML de despliegue. El plan gratuito no requiere tarjeta y las aplicaciones pueden suspenderse después de 15 minutos sin tráfico.
 
 ### Configuración del proyecto
 
 - `server.port=${PORT:8080}` permite utilizar el puerto que Rollout proporcione mediante `PORT`.
 - `DatabaseConfig` acepta `DATABASE_URL` y convierte una URL PostgreSQL de Rollout en una conexión JDBC.
 - No es necesario agregar configuración específica de Render ni otro proveedor.
-- PostgreSQL se puede crear desde Rollout con `rollout db add`; Rollout conecta la aplicación mediante `DATABASE_URL`. citeturn0search1
+- PostgreSQL se puede crear desde Rollout con `rollout db add`; Rollout conecta la aplicación mediante `DATABASE_URL`.
 - `SESSION_COOKIE_SECURE=true` debe configurarse en Rollout para que las cookies de sesión funcionen de forma segura bajo HTTPS.
 
 ### Despliegue en la cuenta gratuita
@@ -278,7 +278,7 @@ El proyecto está preparado para desplegarse en **Rollout** usando su plan gratu
 7. Consulta el estado con `rollout status` y los registros con `rollout logs`.
 8. Abre la URL HTTPS que Rollout asignará a la aplicación.
 
-En el plan gratuito Rollout ofrece una base PostgreSQL por aplicación, las aplicaciones pueden dormir cuando están inactivas y el servicio es de mejor esfuerzo, sin garantía de disponibilidad. citeturn0search0
+En el plan gratuito Rollout ofrece una base PostgreSQL por aplicación, las aplicaciones pueden dormir cuando están inactivas y el servicio es de mejor esfuerzo, sin garantía de disponibilidad.
 
 ## Docker
 
