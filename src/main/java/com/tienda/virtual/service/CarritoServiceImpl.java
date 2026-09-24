@@ -30,7 +30,7 @@ public class CarritoServiceImpl implements CarritoService {
             doc.add(new Paragraph("OriginalFragance", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 25)));
             doc.add(new Paragraph("Perfumes Originales, Que cada fragancia no solo acompañe tu día, sino que deje un recuerdo imposible de olvidar. ^^Paco Rabanne^^"));
             doc.add(new Paragraph("Tunja Centro"));
-            doc.add(new Paragraph("Correo Corporativo tibatacamilo2.0@gmail.com"));
+            doc.add(new Paragraph("Correo Corporativo originalfragance516@gmail.com"));
 
             // Título de la factura.
             doc.add(new Paragraph("Comprobante de pedido - Recibo de compra", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 20)));
@@ -81,7 +81,7 @@ public class CarritoServiceImpl implements CarritoService {
             doc.add(new Paragraph(" ")); // Espacio
             doc.add(new Paragraph("la factura se enviará a correo y celular registrado, emitiremos tu factura electrónica validada por la DIAN, Los productos llegarán a la dirección registrada por el usuario. La transportadora se comunicara contigo para la entrega.", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             doc.add(new Paragraph(" ")); // Espacio
-            doc.add(new Paragraph("Cualquier duda o inquietud comunicarse con nuestras líneas de atención. líneas telefónicas WhatsApp 3112463665.", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            doc.add(new Paragraph("Cualquier duda o inquietud comunicarse con nuestras líneas de atención. líneas telefónicas WhatsApp 3112463665 o al correo: originalfragance516@gmail.com", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             doc.add(new Paragraph(" ")); // Espacio
             doc.add(new Paragraph("Atrévete a ser diferente. Atrévete a dejar tu esencia. ^^paco rabanne^^", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 13)));
 
