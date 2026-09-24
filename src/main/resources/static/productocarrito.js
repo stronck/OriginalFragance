@@ -205,7 +205,7 @@ async function pagar() {
             return;
         }
 
-        await mostrarAlerta('En breve se confirmará el pago y se guardará la factura de compra en tu cuenta de usuario en la sección Mis Pedidos, la transportadora se comunicará contigo para la entrega');
+        await mostrarAlerta('En breve se confirmará el pago y se guardará el comprobante de pedido en tu cuenta de usuario en la sección Mis Pedidos, tu factura de compra se enviara a tu correo y celular registrados, la transportadora se comunicará contigo para la entrega');
 
         const lista = document.getElementById('listaCarrito');
         const totalElemento = document.getElementById('total');
