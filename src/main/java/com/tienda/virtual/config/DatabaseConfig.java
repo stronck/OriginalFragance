@@ -31,9 +31,20 @@ public class DatabaseConfig {
                 environment.getProperty("DATABASE_URL")
         );
 
+        // Permite configurar Rollout mediante variables separadas y cortas.
+        if (configuredUrl == null) {
+            String host = environment.getProperty("DB_HOST");
+            String port = firstNonBlank(environment.getProperty("DB_PORT"), "5432");
+            String database = environment.getProperty("DB_NAME");
+
+            if (host != null && database != null) {
+                configuredUrl = "jdbc:postgresql://" + host + ":" + port + "/" + database;
+            }
+        }
+
         if (configuredUrl == null) {
             throw new IllegalStateException(
-                    "No se encontró DATABASE_URL ni SPRING_DATASOURCE_URL para conectar con PostgreSQL."
+                    "No se encontró una configuración PostgreSQL válida."
             );
         }
 
@@ -46,12 +57,14 @@ public class DatabaseConfig {
         String username = firstNonBlank(
                 environment.getProperty("SPRING_DATASOURCE_USERNAME"),
                 environment.getProperty("spring.datasource.username"),
+                environment.getProperty("DB_USER"),
                 connection.username()
         );
 
         String password = firstNonBlank(
                 environment.getProperty("SPRING_DATASOURCE_PASSWORD"),
                 environment.getProperty("spring.datasource.password"),
+                environment.getProperty("DB_PASSWORD"),
                 connection.password()
         );
 
