@@ -254,6 +254,33 @@ http://localhost:8080
 
 si no se define otro valor mediante `PORT`.
 
+
+## Despliegue gratuito en Render
+
+El proyecto incluye `render.yaml` para facilitar el despliegue de la aplicación mediante **Render** usando el plan gratuito.
+
+La configuración:
+
+- Crea un **Web Service** con runtime Docker.
+- Utiliza el `Dockerfile` existente.
+- Usa el plan `free` para el servicio web.
+- Crea una base de datos **Render PostgreSQL** con plan `free`.
+- Pasa automáticamente la URL de PostgreSQL mediante `DATABASE_URL`.
+- Activa `SESSION_COOKIE_SECURE=true` para las sesiones HTTPS de Render.
+- Mantiene la aplicación escuchando en el puerto proporcionado por Render mediante `PORT`, con `8080` como valor local predeterminado.
+
+### Pasos
+
+1. En Render selecciona **New → Blueprint**.
+2. Conecta el repositorio `stronck/OriginalFragance`.
+3. Render detectará `render.yaml`.
+4. Mantén el servicio web y PostgreSQL en el plan **Free**.
+5. Ejecuta el despliegue.
+6. Espera a que finalicen la creación de PostgreSQL y la construcción del contenedor.
+7. Abre la URL `onrender.com` que Render asignará al servicio.
+
+> **Importante:** el servicio web gratuito puede suspenderse después de 15 minutos sin tráfico y volver a iniciarse cuando recibe una solicitud. Además, el PostgreSQL gratuito de Render tiene actualmente un límite de 1 GB y expira después de 30 días. Esta modalidad sirve para pruebas, demostraciones y proyectos académicos; no debe considerarse almacenamiento permanente. 
+
 ## Docker
 
 El proyecto incluye un `Dockerfile` con dos etapas:
