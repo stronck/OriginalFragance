@@ -23,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 public class DatabaseConfig {
 
     @Bean
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public HikariDataSource dataSource(Environment environment) {
     public HikariDataSource dataSource(Environment environment) {
         String configuredUrl = firstNonBlank(
                 environment.getProperty("SPRING_DATASOURCE_URL"),
@@ -64,6 +65,7 @@ public class DatabaseConfig {
         return dataSource;
     }
 
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.private ConnectionInfo parseConnection(String url) {
     private ConnectionInfo parseConnection(String url) {
         if (url.startsWith("jdbc:postgresql://")) {
             return new ConnectionInfo(url, null, null);
@@ -104,10 +106,12 @@ public class DatabaseConfig {
         return new ConnectionInfo(jdbc.toString(), username, password);
     }
 
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.private String decode(String value) {
     private String decode(String value) {
         return URLDecoder.decode(value, StandardCharsets.UTF_8);
     }
 
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.private String firstNonBlank(String... values) {
     private String firstNonBlank(String... values) {
         for (String value : values) {
             if (value != null && !value.isBlank()) {
