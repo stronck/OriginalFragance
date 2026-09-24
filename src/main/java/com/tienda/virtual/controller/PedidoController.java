@@ -34,6 +34,7 @@ public class PedidoController {
     private PedidoService pedidoService;
 
     @PostMapping
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<Pedido> crearPedido(HttpSession session) {
     public ResponseEntity<Pedido> crearPedido(HttpSession session) {
         Usuario usuario = usuarioDeSesion(session);
 
@@ -57,6 +58,7 @@ public class PedidoController {
     }
 
     @GetMapping("/mis-pedidos")
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<List<Pedido>> obtenerMisPedidos(HttpSession session) {
     public ResponseEntity<List<Pedido>> obtenerMisPedidos(HttpSession session) {
         Usuario usuario = usuarioDeSesion(session);
 
@@ -68,6 +70,7 @@ public class PedidoController {
     }
 
     @GetMapping("/{id}/factura")
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<byte[]> generarFactura(@PathVariable Long id, HttpSession session) {
     public ResponseEntity<byte[]> generarFactura(@PathVariable Long id, HttpSession session) {
         Usuario usuarioSesion = usuarioDeSesion(session);
 
@@ -104,6 +107,7 @@ public class PedidoController {
     }
 
     @GetMapping
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<List<Pedido>> obtenerPedidos(HttpSession session) {
     public ResponseEntity<List<Pedido>> obtenerPedidos(HttpSession session) {
         if (!esAdministrador(session)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
@@ -129,11 +133,13 @@ public class PedidoController {
         return ResponseEntity.ok(pedido);
     }
 
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.private boolean esAdministrador(HttpSession session) {
     private boolean esAdministrador(HttpSession session) {
         Usuario usuario = usuarioDeSesion(session);
         return usuario != null && "admin".equalsIgnoreCase(usuario.getRol());
     }
 
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.private Usuario usuarioDeSesion(HttpSession session) {
     private Usuario usuarioDeSesion(HttpSession session) {
         Object usuario = session.getAttribute(USUARIO);
         if (usuario instanceof Usuario) {
@@ -143,6 +149,7 @@ public class PedidoController {
         return null;
     }
 
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.private List<Producto> carritoEnSesion(HttpSession session) {
     private List<Producto> carritoEnSesion(HttpSession session) {
         Object valor = session.getAttribute(CARRITO);
 
