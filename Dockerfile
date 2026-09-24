@@ -25,7 +25,7 @@ WORKDIR /app
 # Copia el archivo JAR desde la etapa de construcción
 COPY --from=build /app/target/*.jar app.jar
 
-# Rollout utilizará el puerto 8080 del contenedor
+# Puerto HTTP de la aplicación
 EXPOSE 8080
 
 # Ejecuta la aplicación
