@@ -1,12 +1,7 @@
-# DOCUMENTACIÓN DETALLADA: mvnw
-# Script Maven Wrapper para ejecutar Maven de forma reproducible en entornos compatibles.
-# El contenido funcional original permanece intacto.
-
-# DOCUMENTACIÓN DEL ARCHIVO: mvnw
-# Wrapper de Maven que permite ejecutar Maven usando la versión/configuración definida por el proyecto.
-# No se modifica el script funcional; este comentario solamente documenta su finalidad.
-
 #!/bin/sh
+# DOCUMENTACIÓN DEL ARCHIVO: mvnw
+# Wrapper de Maven para ejecutar el proyecto con una configuración reproducible.
+# El script funcional original se conserva sin cambios.
 # ----------------------------------------------------------------------------
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
