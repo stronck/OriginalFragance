@@ -285,3 +285,17 @@ body {
         padding-right: 12px;
     }
 }
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Ajustes de medios de pago y separación de transportadoras. */
+.medios-pago-imagenes {
+    width: 100%;
+}
+
+.medio-pago-texto {
+    line-height: 1.4;
+}
+
+.pedido-boton {
+    margin-bottom: 40px !important;
+}
