@@ -24,8 +24,7 @@ import java.util.List;
 public class CarritoServiceImpl implements CarritoService {
 
     @Override
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    public byte[] generarFactura(List<Producto> carrito, Usuario usuario, Long pedidoId, String pedidoEstado, java.time.LocalDateTime pedidoFecha) {public byte[] generarFactura(List<Producto> carrito, Usuario usuario, Long pedidoId, String pedidoEstado, java.time.LocalDateTime pedidoFecha) {
+    public byte[] generarFactura(List<Producto> carrito, Usuario usuario, Long pedidoId, String pedidoEstado, java.time.LocalDateTime pedidoFecha) {
         if (carrito == null || carrito.isEmpty()) return null;
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             Document doc = new Document();
@@ -101,8 +100,7 @@ public class CarritoServiceImpl implements CarritoService {
 
     // Convierte la descripción almacenada con HTML en una descripción adecuada para el PDF.
     // El precio anterior se muestra debajo, en menor tamaño, gris y tachado.
-    // Método: implementa la operación indicada por su firma y conecta este componente con el flujo de la aplicación.
-    private Paragraph crearDescripcionFactura(String descripcion) {private Paragraph crearDescripcionFactura(String descripcion) {
+    private Paragraph crearDescripcionFactura(String descripcion) {
         Paragraph resultado = new Paragraph();
 
         if (descripcion == null || descripcion.isEmpty()) {
