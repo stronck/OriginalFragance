@@ -147,7 +147,7 @@ footer a {
 }
 
 /* ---------------------------------------------------------------------------------------------------------- */
-/* Ajustes exclusivos de carrito.html: sin CSS interno y sin @media. */
+/* Ajustes exclusivos de carrito.html. */
 html.auth-pending body {
     visibility: hidden;
 }
