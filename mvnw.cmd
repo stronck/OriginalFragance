@@ -1,3 +1,6 @@
+@REM DOCUMENTACIÓN DETALLADA: mvnw.cmd
+@REM Maven Wrapper para Windows. El contenido funcional original permanece intacto.
+
 @REM DOCUMENTACIÓN DEL ARCHIVO: mvnw.cmd
 @REM Wrapper de Maven para Windows. El script funcional existente se conserva sin cambios.
 
