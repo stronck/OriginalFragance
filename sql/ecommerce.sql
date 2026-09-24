@@ -1,3 +1,7 @@
+-- DOCUMENTACIÓN DETALLADA DEL ARCHIVO
+-- Este script contiene la estructura y datos iniciales de la aplicación.
+-- El SQL funcional existente se conserva sin cambios; únicamente se documenta.
+
 -- DOCUMENTACIÓN DEL ARCHIVO: ecommerce.sql
 -- Este script define/prepara la estructura y los datos iniciales de la tienda.
 -- Los comentarios explican tablas, restricciones, productos, usuarios e inserciones.
