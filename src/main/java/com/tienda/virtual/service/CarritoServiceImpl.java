@@ -33,7 +33,7 @@ public class CarritoServiceImpl implements CarritoService {
             doc.add(new Paragraph("Correo Corporativo tibatacamilo2.0@gmail.com"));
 
             // Título de la factura.
-            doc.add(new Paragraph("Factura de Compra", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 20)));
+            doc.add(new Paragraph("Comprobante de pedido - Recibo de compra", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 20)));
             doc.add(new Paragraph(" ")); // Espacio
 
             // Datos básicos del comprador.
@@ -79,7 +79,7 @@ public class CarritoServiceImpl implements CarritoService {
             doc.add(new Paragraph(" "));
             doc.add(new Paragraph("Precio Total Facturado: $" + formato.format(total), FontFactory.getFont(FontFactory.HELVETICA_BOLD, 15)));
             doc.add(new Paragraph(" ")); // Espacio
-            doc.add(new Paragraph("Los productos llegarán a la dirección registrada por el usuario. La transportadora se comunicara contigo para la entrega.", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            doc.add(new Paragraph("la factura se enviará a correo y celular registrado, emitiremos tu factura electrónica validada por la DIAN, Los productos llegarán a la dirección registrada por el usuario. La transportadora se comunicara contigo para la entrega.", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             doc.add(new Paragraph(" ")); // Espacio
             doc.add(new Paragraph("Cualquier duda o inquietud comunicarse con nuestras líneas de atención. líneas telefónicas WhatsApp 3112463665.", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             doc.add(new Paragraph(" ")); // Espacio
