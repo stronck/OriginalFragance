@@ -1,0 +1,23 @@
+# Configuración de despliegue gratuito en Render.
+# Crea un Web Service Docker y una base PostgreSQL gratuita en la misma región.
+# La base gratuita de Render tiene límites y caduca después de 30 días.
+services:
+  - type: web
+    name: originalfragance
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: originalfragance-db
+          property: connectionString
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+
+databases:
+  - name: originalfragance-db
+    plan: free
+    region: oregon
