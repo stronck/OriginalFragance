@@ -28,6 +28,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping("/registrar")
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public Usuario registrarUsuario(@RequestBody Usuario usuario) {
     public Usuario registrarUsuario(@RequestBody Usuario usuario) {
         // El rol nunca lo decide el navegador al registrarse.
         usuario.setRol("user");
@@ -35,6 +36,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/iniciar-sesion")
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<Usuario> iniciarSesion(@RequestBody Usuario usuario, HttpSession session) {
     public ResponseEntity<Usuario> iniciarSesion(@RequestBody Usuario usuario, HttpSession session) {
         Usuario usuarioAutenticado = usuarioService.iniciarSesion(
                 usuario.getNombreUsuario(),
@@ -53,6 +55,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/sesion")
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<Usuario> obtenerSesion(HttpSession session) {
     public ResponseEntity<Usuario> obtenerSesion(HttpSession session) {
         Long usuarioId = (Long) session.getAttribute(USUARIO_ID);
         if (usuarioId == null) {
@@ -69,12 +72,14 @@ public class UsuarioController {
     }
 
     @PostMapping("/cerrar-sesion")
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<Void> cerrarSesion(HttpSession session) {
     public ResponseEntity<Void> cerrarSesion(HttpSession session) {
         session.invalidate();
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<List<Usuario>> obtenerTodosUsuarios(HttpSession session) {
     public ResponseEntity<List<Usuario>> obtenerTodosUsuarios(HttpSession session) {
         Usuario usuarioSesion = usuarioActual(session);
 
@@ -88,6 +93,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<Void> eliminarUsuario(@PathVariable Long id, HttpSession session) {
     public ResponseEntity<Void> eliminarUsuario(@PathVariable Long id, HttpSession session) {
         Usuario usuarioSesion = usuarioActual(session);
 
@@ -107,6 +113,7 @@ public class UsuarioController {
     }
 
     @PutMapping
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.public ResponseEntity<Usuario> actualizarUsuario(@RequestBody Usuario usuario, HttpSession session) {
     public ResponseEntity<Usuario> actualizarUsuario(@RequestBody Usuario usuario, HttpSession session) {
         Usuario usuarioSesion = usuarioActual(session);
 
@@ -128,6 +135,7 @@ public class UsuarioController {
         return ResponseEntity.ok(actualizado);
     }
 
+    // Método: define una operación del componente y concentra la responsabilidad indicada por su firma.private Usuario usuarioActual(HttpSession session) {
     private Usuario usuarioActual(HttpSession session) {
         Long usuarioId = (Long) session.getAttribute(USUARIO_ID);
         if (usuarioId == null) {
