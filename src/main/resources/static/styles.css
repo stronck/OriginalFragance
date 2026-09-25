@@ -303,5 +303,60 @@ body {
 }
 
 .pedido-boton {
-    margin-bottom: 40px !important;
+    margin-bottom: 40px;
 }
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+body {
+    padding-top: 70px;
+}
+
+.descripcion-fragancias .fragancia-card {
+    height: 100%;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(33, 37, 41, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.descripcion-fragancias .fragancia-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+.descripcion-fragancias .fragancia-card p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 8px;
+}
+
+.payment-icon-small { width: 50px; height: 50px; object-fit: contain; }
+.payment-icon-large { width: 70px; height: 55px; object-fit: contain; }
+.fragancia-icon { width: 45px; height: 45px; object-fit: contain; vertical-align: middle; margin-right: 8px; }
+.form-label-spacing { margin-bottom: 0; }
+.form-width-30 { width: 30%; margin: auto; text-align: center; }
+.form-width-50 { width: 50%; margin: auto; text-align: center; }
+.form-width-75 { width: 75%; margin: auto; text-align: center; }
+
+.legal-button {
+    background-color: #e5e5e5;
+    border: 1px solid #cfcfcf;
+    color: #333;
+}
+.legal-button:hover {
+    background-color: #d5d5d5;
+    border-color: #bdbdbd;
+    color: #222;
+}
+
+.of-final { width: 100%; max-width: 320px; height: auto; display: block; margin: 0 auto; border-radius: 0.375rem; }
+
+.css-hidden { display: none; }
+.css-centered { margin: auto; }
