@@ -32,7 +32,7 @@ public class CarritoServiceImpl implements CarritoService {
             doc.open();
 
             // Datos de la empresa.
-            doc.add(new Paragraph("OriginalFragance", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 25)));
+            doc.add(new Paragraph("OriginalFragance Nit 1049641875 - 7", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 25)));
             doc.add(new Paragraph("Perfumes Originales, Que cada fragancia no solo acompañe tu día, sino que deje un recuerdo imposible de olvidar. ^^Paco Rabanne^^"));
             doc.add(new Paragraph("Tunja Centro"));
             doc.add(new Paragraph("Correo Corporativo originalfragance516@gmail.com"));
