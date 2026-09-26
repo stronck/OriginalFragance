@@ -173,13 +173,6 @@ async function mostrarUsuarioNavbar() {
     }
 
     if (usuarioSesion) {
-        // Mantiene el menú del navbar desplegado al iniciar sesión.
-        // El botón hamburguesa de Bootstrap sigue permitiendo plegarlo y desplegarlo manualmente.
-        const navbarCollapse = document.getElementById('navbarNav');
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        if (navbarCollapse) navbarCollapse.classList.add('show');
-        if (navbarToggler) navbarToggler.setAttribute('aria-expanded', 'true');
-
         if (btnRegistrarse) btnRegistrarse.style.display = 'none';
         if (btnIniciarSesion) btnIniciarSesion.style.display = 'none';
 
