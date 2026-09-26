@@ -1,3 +1,8 @@
+/* ===== DOCUMENTACIÓN DE USUARIOS =====
+ * Este archivo controla en el navegador el registro, inicio/cierre de sesión,
+ * perfil de usuario, administración de usuarios, pedidos y validaciones de sesión.
+ * Los comentarios explican el flujo entre la interfaz y las API REST del backend.
+ */
 /*
  * DOCUMENTACIÓN DETALLADA: usuarios.js
  * Centraliza la lógica del navegador relacionada con sesión, registro, navegación,
@@ -96,6 +101,7 @@ function mostrarAlerta(mensaje) {
 }
 
 
+// Consulta al backend para saber qué usuario mantiene una sesión activa.
 async function obtenerUsuarioSesion() {
     try {
         const response = await fetch('/api/usuarios/sesion');
@@ -142,6 +148,7 @@ async function actualizarContadorCarrito() {
     }
 }
 
+// Actualiza el navbar según exista o no una sesión autenticada.
 async function mostrarUsuarioNavbar() {
     const btnRegistrarse = document.getElementById('btnRegistrarse');
     const btnIniciarSesion = document.getElementById('btnIniciarSesion');
@@ -237,6 +244,7 @@ async function mostrarUsuarioNavbar() {
 
 mostrarUsuarioNavbar();
 
+// Recoge el formulario de registro y lo envía al endpoint de usuarios.
 async function registrarUsuario() {
     const nombreUsuario = document.getElementById('nombreUsuario').value;
     const contrasena = document.getElementById('contrasena').value;
@@ -284,6 +292,7 @@ if (registroForm) {
     });
 }
 
+// Envía las credenciales al backend y redirige según el rol recibido.
 async function iniciarSesion() {
     const nombreUsuario = document.getElementById('nombreUsuario').value;
     const contrasena = document.getElementById('contrasena').value;
@@ -320,7 +329,8 @@ if (loginForm) {
 }
 
 if (window.location.pathname.endsWith('admin.html')) {
-    async function cargarUsuarios() {
+    // Solicita al backend la lista de usuarios para el panel administrativo.
+async function cargarUsuarios() {
         const response = await fetch('/api/usuarios');
 
         if (response.status === 401 || response.status === 403) {
@@ -360,6 +370,7 @@ if (window.location.pathname.endsWith('admin.html')) {
     cargarPedidos();
 }
 
+// Carga los datos del usuario autenticado en su formulario de perfil.
 async function cargarDatosUsuario() {
     if (!window.location.pathname.endsWith('user.html')) {
         return;
@@ -576,6 +587,7 @@ if (esPaginaPublica) {
     });
 }
 
+// Carga los pedidos disponibles para administración y construye la tabla.
 async function cargarPedidos() {
     const response = await fetch('/api/pedidos');
 
@@ -629,6 +641,7 @@ async function cargarPedidos() {
     });
 }
 
+// Confirma el pago de un pedido y solicita la generación de su factura.
 async function confirmarPagoPedido(id) {
     try {
         const response = await fetch('/api/pedidos/' + id + '/pago-exitoso', {
@@ -667,6 +680,7 @@ async function confirmarPagoPedido(id) {
     }
 }
 
+// Obtiene y muestra únicamente los pedidos asociados al usuario actual.
 async function cargarMisPedidos() {
     if (!window.location.pathname.endsWith('user.html')) {
         return;
@@ -721,6 +735,7 @@ async function cargarMisPedidos() {
     }
 }
 
+// Abre la factura PDF del pedido autorizado en una nueva ventana.
 async function imprimirFacturaUsuario(id) {
     const ventana = window.open('/api/pedidos/' + id + '/factura', '_blank');
 
