@@ -30,32 +30,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Evita que los controles de la cuenta se monten entre sí cuando el ancho es reducido. */
-@media (max-width: 767.98px) {
-    .navbar-collapse .ms-auto {
-        width: 100%;
-        gap: 6px;
-    }
-
-    .navbar-collapse .ms-auto > * {
-        flex-shrink: 0;
-    }
-
-    #datosUsuarioNavbar {
-        min-width: 0;
-        max-width: 100%;
-        flex-shrink: 1;
-    }
-
-    #datosUsuarioNavbar span {
-        min-width: 0;
-        max-width: 38vw;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-}
-
 
 body {
     padding-top: 70px;
