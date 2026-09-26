@@ -1,3 +1,6 @@
+/* ===== COMENTARIOS DEL ARCHIVO =====
+Este archivo contiene los estilos visuales de OriginalFragance. Los comentarios añadidos son descriptivos y no modifican las reglas CSS.
+*/
 /*
  * DOCUMENTACIÓN DETALLADA: styles.css
  * Hoja de estilos común de toda la tienda. Contiene apariencia, navegación, hero,
@@ -11,20 +14,95 @@ body {
     background-color: #131313; /* Negro puro */
     color: #d0d0d0; /* Gris claro para mejor lectura */
 }
+/* Navbar fijo en la parte superior durante el scroll. */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+/* Mantiene todos los controles del usuario alineados a la derecha en PC y móvil. */
+.navbar-collapse .ms-auto {
+    margin-left: auto;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+body {
+    padding-top: 70px;
+}
+
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Hero */
 .hero {
-    background: linear-gradient(to right, #2a2a2a, #2a2a2a); /* Gris oscuro elegante */
-    color: #f0f0f0; /* Blanco humo */
-    padding: 80px 0;
+    background: #2a2a2a;
+    color: #f0f0f0;
+    height: 380px;
+    box-sizing: border-box;
+    padding: 18px 0;
+}
+
+.hero > .container {
+    padding-top: 70px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: left;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.15;
+    margin: 0 0 8px;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    margin: 0 0 8px;
+}
+
+.hero-oferta {
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.hero-descripcion {
+    max-width: none;
+}
+
+/* Separación inferior entre el hero y el contenido principal. */
+main {
+    padding-top: 30px;
+}
+
+@media (max-width: 767.98px) {
+    /* Baja los botones de registro e inicio de sesión dentro del menú móvil. */
+    #btnRegistrarse,
+    #btnIniciarSesion {
+        margin-top: 10px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
 }
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Productos cards */
@@ -154,7 +232,7 @@ footer a {
 
 /* ---------------------------------------------------------------------------------------------------------- */
 /* Ajustes exclusivos de carrito.html. */
-html.auth-pending body {
+.auth-pending body {
     visibility: hidden;
 }
 
@@ -265,6 +343,14 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-padding-top: 0;
+}
+
+.hero {
+    scroll-margin-top: 0;
+}
+
 .admin-table-responsive {
     width: 100%;
     max-width: 100%;
@@ -307,17 +393,27 @@ body {
 }
 
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1030;
+/* ===== ESTILOS EXTRAÍDOS DE LOS ARCHIVOS HTML ===== */
+
+
+
+.css-hidden { display: none; }
+.css-centered { margin: auto; }
+
+.payment-icon-small { width: 50px; height: 50px; object-fit: contain; }
+.payment-icon-large { width: 70px; height: 55px; object-fit: contain; }
+.fragancia-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
-body {
-    padding-top: 70px;
-}
+.form-label-spacing { margin-bottom: 0; }
+.form-width-30 { width: 30%; margin: auto; text-align: center; }
+.form-width-50 { width: 50%; margin: auto; text-align: center; }
+.form-width-75 { width: 75%; margin: auto; text-align: center; }
 
 .descripcion-fragancias .fragancia-card {
     height: 100%;
@@ -337,14 +433,6 @@ body {
     margin-bottom: 8px;
 }
 
-.payment-icon-small { width: 50px; height: 50px; object-fit: contain; }
-.payment-icon-large { width: 70px; height: 55px; object-fit: contain; }
-.fragancia-icon { width: 45px; height: 45px; object-fit: contain; vertical-align: middle; margin-right: 8px; }
-.form-label-spacing { margin-bottom: 0; }
-.form-width-30 { width: 30%; margin: auto; text-align: center; }
-.form-width-50 { width: 50%; margin: auto; text-align: center; }
-.form-width-75 { width: 75%; margin: auto; text-align: center; }
-
 .legal-button {
     background-color: #e5e5e5;
     border: 1px solid #cfcfcf;
@@ -356,7 +444,12 @@ body {
     color: #222;
 }
 
-.of-final { width: 100%; max-width: 320px; height: auto; display: block; margin: 0 auto; border-radius: 0.375rem; }
 
-.css-hidden { display: none; }
-.css-centered { margin: auto; }
+.of-final {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.375rem;
+}
