@@ -1,4 +1,4 @@
--- Datos iniciales de productos para entornos donde PostgreSQL no ejecuta sql/ecommerce.sql automáticamente.
+-- Datos iniciales para entornos donde PostgreSQL no ejecuta sql/ecommerce.sql automáticamente.
 -- Los INSERT son idempotentes para evitar duplicados en cada arranque.
 
 INSERT INTO producto (nombre, descripcion, precio)
@@ -31,4 +31,14 @@ SELECT 'PACO RABANNE c- 1 PURE XS 100ml',
        569900.00
 WHERE NOT EXISTS (
     SELECT 1 FROM producto WHERE nombre = 'PACO RABANNE c- 1 PURE XS 100ml'
+);
+
+-- Usuario administrador inicial.
+INSERT INTO usuario
+(nombre_usuario, contrasena, nombres, apellidos, celular, correo, direccion_envio, rol)
+SELECT 'stck', '$2a$10$Hpo5C.rx/zDwOphq0vPA0OpRwQAtR8beTSk.jni0EMWK/SdeA1mXK',
+       'Camilo', 'Tibata Salguero', '3112463665', 'tibatacamilo2.0@gmail.com',
+       'Tunja centro OriginF distrito15', 'admin'
+WHERE NOT EXISTS (
+    SELECT 1 FROM usuario WHERE nombre_usuario = 'stck'
 );
