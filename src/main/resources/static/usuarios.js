@@ -183,11 +183,6 @@ async function mostrarUsuarioNavbar() {
         if (btnRegistrarse) btnRegistrarse.style.display = 'none';
         if (btnIniciarSesion) btnIniciarSesion.style.display = 'none';
 
-        if (btnMiCuenta) {
-            btnMiCuenta.href = usuarioSesion.rol === 'admin' ? 'admin.html' : 'user.html';
-            btnMiCuenta.style.display = 'inline-block';
-        }
-
         if (btnCarrito) {
             btnCarrito.style.display = 'inline-block';
             actualizarContadorCarrito();
@@ -201,6 +196,10 @@ async function mostrarUsuarioNavbar() {
         const datosNavbar = document.createElement('div');
         datosNavbar.id = 'datosUsuarioNavbar';
         datosNavbar.className = 'd-flex align-items-center';
+        datosNavbar.style.cursor = 'pointer';
+        datosNavbar.setAttribute('role', 'link');
+        datosNavbar.setAttribute('tabindex', '0');
+        datosNavbar.setAttribute('aria-label', 'Mi Cuenta');
         datosNavbar.innerHTML = `
             <i class="fa-solid fa-user-circle text-light fs-3 me-2"></i>
             <span class="me-3 fw-bold text-light">${usuarioSesion.nombreUsuario}</span>
@@ -208,6 +207,21 @@ async function mostrarUsuarioNavbar() {
         `;
 
         navbar.appendChild(datosNavbar);
+
+        const destinoCuenta = usuarioSesion.rol === 'admin' ? 'admin.html' : 'user.html';
+        datosNavbar.addEventListener('click', (evento) => {
+            if (evento.target.closest('#cerrarSesion')) {
+                return;
+            }
+            window.location.href = destinoCuenta;
+        });
+
+        datosNavbar.addEventListener('keydown', (evento) => {
+            if ((evento.key === 'Enter' || evento.key === ' ') && !evento.target.closest('#cerrarSesion')) {
+                evento.preventDefault();
+                window.location.href = destinoCuenta;
+            }
+        });
 
         document.getElementById('cerrarSesion').addEventListener('click', async () => {
             try {
