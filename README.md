@@ -90,7 +90,6 @@ OriginalFragance/
 │   │   │   └── VirtualApplication.java
 │   │   └── resources/
 │   │       ├── application.properties
-│   │       ├── data.sql
 │   │       └── static/
 │   │           ├── index.html
 │   │           ├── iniciarsesion.html
