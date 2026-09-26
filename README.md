@@ -13,7 +13,7 @@ La aplicación está organizada en una arquitectura por capas:
 - **Repository:** comunica la aplicación con PostgreSQL mediante Spring Data.
 - **Model:** representa las entidades persistidas.
 - **Frontend:** páginas HTML, CSS y JavaScript servidas directamente por Spring Boot.
-- **Resources:** configuración de Spring Boot y datos iniciales de la base de datos.
+- **Resources:** configuración de Spring Boot.
 
 ## Tecnologías
 
@@ -104,9 +104,6 @@ OriginalFragance/
 │   │           ├── usuarios.js
 │   │           ├── styles.css
 │   │           └── img/
-│   └── test/
-│       └── java/com/tienda/virtual/
-│           └── VirtualApplicationTests.java
 ├── sql/
 │   └── ecommerce.sql
 ├── Dockerfile
@@ -132,11 +129,7 @@ Por lo tanto, las tablas se crean o actualizan de acuerdo con las entidades Java
 
 ### Datos iniciales
 
-`src/main/resources/data.sql` contiene la estructura SQL complementaria y los datos iniciales de la tienda.
-
-`sql/ecommerce.sql` mantiene el mismo contenido para disponer de una copia del script de base de datos.
-
-Los dos archivos se encuentran sincronizados.
+`sql/ecommerce.sql` contiene la estructura SQL complementaria y los datos iniciales de la tienda.
 
 La tabla `usuario` utiliza el campo `rol` para distinguir entre:
 
