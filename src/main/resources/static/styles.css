@@ -30,22 +30,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Reserva espacio para el contador del carrito para evitar que su cambio de tamaño
-   desplace o superponga los controles de cuenta y sesión. */
-#btnCarrito {
-    min-width: 72px;
-    flex-shrink: 0;
-}
-
-#contadorCarrito {
-    min-width: 1.5em;
-    text-align: center;
-    display: inline-block;
-}
-
-#datosUsuarioNavbar {
-    flex-shrink: 0;
-}
 
 body {
     padding-top: 70px;
