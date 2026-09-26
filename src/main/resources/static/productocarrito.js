@@ -1,3 +1,7 @@
+/* ===== DOCUMENTACIÓN DE PRODUCTOS Y CARRITO =====
+ * Este archivo controla el catálogo, los productos seleccionados y la comunicación
+ * del carrito con la API REST. Los comentarios explican cada flujo sin cambiar la lógica.
+ */
 /*
  * DOCUMENTACIÓN DETALLADA: productocarrito.js
  * Gestiona la comunicación de la página carrito con el backend, carga y renderiza
@@ -7,6 +11,7 @@
 // Funciones del catálogo y carrito: consulta productos, administra la sesión y gestiona pedidos.
 /* Carrito administrado por el backend mediante HttpSession. */
 
+// Solicita los productos al backend y los presenta en las tarjetas del catálogo.
 async function cargarProductos() {
     try {
         const res = await fetch('/api/productos');
