@@ -204,7 +204,7 @@ async function mostrarUsuarioNavbar() {
         datosNavbar.innerHTML = `
             <i class="fa-solid fa-user-circle text-light fs-3 me-2"></i>
             <span class="me-3 fw-bold text-light">${usuarioSesion.nombreUsuario}</span>
-            <button id="cerrarSesion" class="btn btn-success btn-sm">Cerrar Sesión</button>
+            <button id="cerrarSesion" class="btn btn-success btn-sm" title="Cerrar Sesión" aria-label="Cerrar Sesión"><i class="fa-solid fa-right-from-bracket"></i></button>
         `;
 
         navbar.appendChild(datosNavbar);
